@@ -122,9 +122,11 @@
 
 
 		function zeigDaten() {
-			const zufaelligerIndex = Math.floor(Math.random() * gebisprueche.length);
-			document.getElementById("bild").src = bilder[zufaelligerIndex];
-			const spruch = gebisprueche[zufaelligerIndex];
+			const zufaelligerIndexS = Math.floor(Math.random() * gebisprueche.length);
+			const zufaelligerIndexB = Math.floor(Math.random() * gebisprueche.length);
+
+			document.getElementById("bild").src = bilder[zufaelligerIndexB];
+			const spruch = gebisprueche[zufaelligerIndexS];
 			const spruchTextMitZeilenumbruechen = spruch.replace(/,/g, ",<br>");
 			container.innerHTML = `<p>${spruchTextMitZeilenumbruechen}</p>`;
 		}
