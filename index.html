@@ -74,7 +74,7 @@
 		// 	"Hudri Wudri laute Nachbarn, ich ziehe in eine neue Wohnung und bin nun frei von diesem Balkon-Alarm.",
 
 		// ];
-
+		// const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
 		const button = document.querySelector("#neuer-spruch");
 		const container = document.querySelector("#spruch-container");
 
@@ -133,8 +133,9 @@
 				"img/24.jpg",
 				"img/25.jpg",
 			];
-			var zufallszahl = Math.floor(Math.random() * bilder.length);
-			document.getElementById("bild").src = bilder[zufallszahl];
+			const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
+			// var zufallszahl = Math.floor(Math.random() * bilder.length);
+			document.getElementById("bild").src = bilder[zufaelligerIndex];
 		}
 
 		button2.addEventListener("click", zeigeNeuenGebiSpruch);
