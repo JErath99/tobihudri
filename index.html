@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		#bild {
+			max-width: 500px;
+			max-height: 500px;
+		}
+
+		h1 {
+			font-size: 36px;
+			margin: 0 0 20px;
+		}
+
+		button {
+			background-color: #0077ff;
+			color: white;
+			font-size: 18px;
+			padding: 10px 20px;
+			margin: 10px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		button:hover {
+			background-color: #0055cc;
+		}
+
+		#spruch-container {
+			background-color: white;
+			color: #333;
+			font-size: 24px;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+			margin-top: 20px;
+			text-align: center;
+			max-width: 600px;
+			width: 100%;
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>Hudri Wudri Geburtstagsparty</title>
+</head>
+<body>
+	<h1>Hudri Wudri Geburtstagsparty</h1>
+	<!-- <button id="neuer-spruch">Neuer Spruch</button> -->
+	<button id="neuer-Geburtstagsspruch">Geburtstagsspruch</button>
+	<br><br>
+	<img id="bild">
+	<div id="spruch-container"></div>
+
+	<script>
+		// const sprueche = [
+		// 	"Hudri Wudri Kühlschrank leer, ich will Pizza und noch mehr",
+		// 	"Hudri Wudri Sommerzeit, ich genieße die lange Helligkeit",
+		// 	"Hudri Wudri Regenwetter, ich bleibe lieber drinnen und werde fetter",
+		// 	"Hudri Wudri Laptop kaputt, ich fühle mich wie ein armer Schluck",
+		// 	"Hudri Wudri Sonnenbrand, ich bin zu lange am Strand",
+		// 	"Hudri Wudri laute Nachbarn, ich ziehe in eine neue Wohnung und bin nun frei von diesem Balkon-Alarm.",
+
+		// ];
+
+		const button = document.querySelector("#neuer-spruch");
+		const container = document.querySelector("#spruch-container");
+
+		function zeigeNeuenSpruch() {
+			const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
+			const spruch = sprueche[zufaelligerIndex];
+			container.innerHTML = `<p>${spruch}</p>`;
+		}
+
+		// button.addEventListener("click", zeigeNeuenSpruch);
+
+
+		const gebisprueche = [
+			"Hudri Wudri Präsentationsgenie, der Tobi hält die Klappe wohl nie",
+			"Hudri Wudri Floorball-Maschine, Zeit hat er keine wegen all seiner Termine",
+			"Hudri Wudri Tischlerei-Projekt, gefühlt wird das ganze wohl nie perfekt...",
+			"Hudri Wudri Afrika-Reise,  er hofft weiterhin auf günstige Tschick-Preise",
+			"Hudri Wudri Zulu lernen, ob er das jemals braucht steht in den Sternen"
+
+		];
+
+		const button2 = document.querySelector("#neuer-Geburtstagsspruch");
+
+		function zeigeNeuenGebiSpruch() {
+			const zufaelligerIndex = Math.floor(Math.random() * gebisprueche.length);
+			const spruch = gebisprueche[zufaelligerIndex];
+			const spruchTextMitZeilenumbruechen = spruch.replace(/,/g, ",<br>");
+			container.innerHTML = `<p>${spruchTextMitZeilenumbruechen}</p>`;
+		}
+
+
+		function zufaelligesBild() {
+			var bilder = [
+				"img/1.jpg",
+				"img/2.jpg",
+				"img/3.jpg",
+				"img/4.jpg",
+				"img/5.jpg",
+				"img/6.jpg",
+				"img/7.jpg",
+				"img/8.jpg",
+				"img/9.jpg",
+				"img/11.jpg",
+				"img/12.jpg",
+				"img/13.jpg",
+				"img/14.jpg",
+				"img/15.jpg",
+				"img/16.jpg",
+				"img/17.jpg",
+				"img/18.jpg",
+				"img/19.jpg",
+				"img/20.jpg",
+			];
+			var zufallszahl = Math.floor(Math.random() * bilder.length);
+			document.getElementById("bild").src = bilder[zufallszahl];
+		}
+
+		button2.addEventListener("click", zeigeNeuenGebiSpruch);
+		button2.addEventListener("click", zufaelligesBild);
+	</script>
+</body>
+</html>
