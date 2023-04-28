@@ -75,14 +75,13 @@
 
 		// ];
 		// const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
-		const button = document.querySelector("#neuer-spruch");
 		const container = document.querySelector("#spruch-container");
 
-		function zeigeNeuenSpruch() {
-			const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
-			const spruch = sprueche[zufaelligerIndex];
-			container.innerHTML = `<p>${spruch}</p>`;
-		}
+		// function zeigDaten() {
+		// 	const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
+		// 	const spruch = sprueche[zufaelligerIndex];
+		// 	container.innerHTML = `<p>${spruch}</p>`;
+		// }
 
 		// button.addEventListener("click", zeigeNeuenSpruch);
 
@@ -96,18 +95,8 @@
 
 		];
 
-		const button2 = document.querySelector("#neuer-Geburtstagsspruch");
-
-		function zeigeNeuenGebiSpruch() {
-			const zufaelligerIndex = Math.floor(Math.random() * gebisprueche.length);
-			const spruch = gebisprueche[zufaelligerIndex];
-			const spruchTextMitZeilenumbruechen = spruch.replace(/,/g, ",<br>");
-			container.innerHTML = `<p>${spruchTextMitZeilenumbruechen}</p>`;
-		}
-
-
-		function zufaelligesBild() {
-			var bilder = [
+		const button = document.querySelector("#neuer-Geburtstagsspruch");
+		var bilder = [
 				"img/1.jpg",
 				"img/2.jpg",
 				"img/3.jpg",
@@ -133,13 +122,20 @@
 				"img/24.jpg",
 				"img/25.jpg",
 			];
+
+
+		function zeigDaten() {
+
 			const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
-			// var zufallszahl = Math.floor(Math.random() * bilder.length);
 			document.getElementById("bild").src = bilder[zufaelligerIndex];
+
+			const spruch = gebisprueche[zufaelligerIndex];
+			const spruchTextMitZeilenumbruechen = spruch.replace(/,/g, ",<br>");
+			container.innerHTML = `<p>${spruchTextMitZeilenumbruechen}</p>`;
+
 		}
 
-		button2.addEventListener("click", zeigeNeuenGebiSpruch);
-		button2.addEventListener("click", zufaelligesBild);
+		button.addEventListener("click", zeigDaten);
 	</script>
 </body>
 </html>
