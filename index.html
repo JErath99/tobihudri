@@ -81,7 +81,7 @@
 		];
 
 		const button = document.querySelector("#neuer-Geburtstagsspruch");
-		var bilder = [
+		const bilder = [
 				"img/1.jpg",
 				"img/2.jpg",
 				"img/3.jpg",
@@ -123,7 +123,7 @@
 
 		function zeigDaten() {
 			const zufaelligerIndexS = Math.floor(Math.random() * gebisprueche.length);
-			const zufaelligerIndexB = Math.floor(Math.random() * gebisprueche.length);
+			const zufaelligerIndexB = Math.floor(Math.random() * bilder.length);
 
 			document.getElementById("bild").src = bilder[zufaelligerIndexB];
 			const spruch = gebisprueche[zufaelligerIndexS];
