@@ -58,32 +58,13 @@
 </head>
 <body>
 	<h1>Hudri Wudri Geburtstagsparty</h1>
-	<!-- <button id="neuer-spruch">Neuer Spruch</button> -->
 	<button id="neuer-Geburtstagsspruch">Geburtstagsspruch</button>
 	<br><br>
 	<img id="bild">
 	<div id="spruch-container"></div>
 
 	<script>
-		// const sprueche = [
-		// 	"Hudri Wudri Kühlschrank leer, ich will Pizza und noch mehr",
-		// 	"Hudri Wudri Sommerzeit, ich genieße die lange Helligkeit",
-		// 	"Hudri Wudri Regenwetter, ich bleibe lieber drinnen und werde fetter",
-		// 	"Hudri Wudri Laptop kaputt, ich fühle mich wie ein armer Schluck",
-		// 	"Hudri Wudri Sonnenbrand, ich bin zu lange am Strand",
-		// 	"Hudri Wudri laute Nachbarn, ich ziehe in eine neue Wohnung und bin nun frei von diesem Balkon-Alarm.",
-
-		// ];
-		// const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
 		const container = document.querySelector("#spruch-container");
-
-		// function zeigDaten() {
-		// 	const zufaelligerIndex = Math.floor(Math.random() * sprueche.length);
-		// 	const spruch = sprueche[zufaelligerIndex];
-		// 	container.innerHTML = `<p>${spruch}</p>`;
-		// }
-
-		// button.addEventListener("click", zeigeNeuenSpruch);
 
 
 		const gebisprueche = [
@@ -125,14 +106,11 @@
 
 
 		function zeigDaten() {
-
 			const zufaelligerIndex = Math.floor(Math.random() * gebisprueche.length);
 			document.getElementById("bild").src = bilder[zufaelligerIndex];
-
 			const spruch = gebisprueche[zufaelligerIndex];
 			const spruchTextMitZeilenumbruechen = spruch.replace(/,/g, ",<br>");
 			container.innerHTML = `<p>${spruchTextMitZeilenumbruechen}</p>`;
-
 		}
 
 		button.addEventListener("click", zeigDaten);
